@@ -86,7 +86,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 .PHONY: clean all doc
 
 #---------------------------------------------------------------------------------
-all: lib/libez3ds.a
+all: clean lib/libez3ds.a
 
 doc:
 	@doxygen Doxyfile
