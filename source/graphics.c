@@ -1,4 +1,4 @@
-#include "graphics.h"
+#include "little3ds/graphics.h"
 
 int clearColor;
 

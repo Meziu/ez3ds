@@ -1,4 +1,4 @@
-#include "text.h"
+#include "little3ds/text.h"
 
 C2D_TextBuf g_staticBuf;
 C2D_TextBuf g_dynamicBuf;

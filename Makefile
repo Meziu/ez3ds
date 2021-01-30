@@ -8,12 +8,6 @@ endif
 
 include $(DEVKITARM)/3ds_rules
 
-export CITRO3D_MAJOR	:= 1
-export CITRO3D_MINOR	:= 6
-export CITRO3D_PATCH	:= 2
-
-VERSION	:=	$(CITRO3D_MAJOR).$(CITRO3D_MINOR).$(CITRO3D_PATCH)
-
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
 # BUILD is the directory where object files & intermediate files will be placed
@@ -21,7 +15,7 @@ VERSION	:=	$(CITRO3D_MAJOR).$(CITRO3D_MINOR).$(CITRO3D_PATCH)
 # DATA is a list of directories containing data files
 # INCLUDES is a list of directories containing header files
 #---------------------------------------------------------------------------------
-TARGET		:=	ez3ds
+TARGET		:=	little3ds
 SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
@@ -86,7 +80,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 .PHONY: clean all doc
 
 #---------------------------------------------------------------------------------
-all: clean lib/libez3ds.a
+all: clean lib/liblittle3ds.a
 
 doc:
 	@doxygen Doxyfile
@@ -99,7 +93,7 @@ lib:
 release:
 	@[ -d $@ ] || mkdir -p $@
 
-lib/libez3ds.a : lib release $(SOURCES) $(INCLUDES)
+lib/liblittle3ds.a : lib release $(SOURCES) $(INCLUDES)
 	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$@ \
 	BUILD_CFLAGS="-DNDEBUG=1 -O2 -fomit-frame-pointer -fno-math-errno" \
 	DEPSDIR=$(CURDIR)/release \

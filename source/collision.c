@@ -1,4 +1,4 @@
-#include "collision.h"
+#include "little3ds/collision.h"
 
 CollisionBox newCollisionBox(Vector2D p_pos, Vector2D p_bounds)
 {

@@ -1,4 +1,4 @@
-#include "sprite.h"
+#include "little3ds/sprite.h"
 
 C2D_SpriteSheet general_spriteSheet;
 Sprite sprites[MAX_SPRITES];
