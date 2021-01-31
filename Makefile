@@ -18,7 +18,9 @@ include $(DEVKITARM)/3ds_rules
 TARGET		:=	little3ds
 SOURCES		:=	source
 DATA		:=	data
-INCLUDES	:=	include
+INCLUDES	:=	include \
+					libs/vorbis/include \
+					libs/ogg/include
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -34,6 +36,8 @@ CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 
 ASFLAGS	:=	-g $(ARCH) $(DEFINES)
+
+LIBS = -lctru -lcitro3d -lcitro2d -lvorbis
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
