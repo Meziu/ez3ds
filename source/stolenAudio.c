@@ -11,7 +11,7 @@ signed char decoreMoreOGG(OggVorbis_File* _passedOggFile, char* _passedAudioBuff
 	// Load the actual OGG sound data
 	while(1){
 		// Read from my OGG file, at the correct offset in my buffer, I can read 4096 bytes at most, big endian, 16-bit samples, and signed samples
-		long ret=ov_read(_passedOggFile,&(_passedAudioBuffer[*_soundBufferWriteOffset]),SINGLEOGGREAD,0,2,1,&_passedCurrentSection);
+		long ret=ov_read(_passedOggFile,&(_passedAudioBuffer[*_soundBufferWriteOffset]),SINGLEOGGREAD,&_passedCurrentSection);
 		if (ret == 0) { // EOF
 			if (_passedShouldLoop==1){
 				if (*_soundBufferWriteOffset==0){

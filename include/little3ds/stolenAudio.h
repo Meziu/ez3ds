@@ -13,9 +13,9 @@
 #include <math.h>
 
 #include <3ds.h>
-#include <ogg.h>
-#include <codec.h>
-#include <vorbisfile.h>
+#include <ogg/ogg.h>
+#include <tremor/ivorbiscodec.h>
+#include <tremor/ivorbisfile.h>
 
 
 #define BYTESPERSAMPLE 2
