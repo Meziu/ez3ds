@@ -17,14 +17,6 @@
 
 #define SCREEN_HEIGHT 240
 
-#define PLAYER_SPRITE   0
-#define ALIEN_SPRITE    1
-#define BULLET_SPRITE   2
-#define BULLET_E_SPRITE 3
-#define LIFE_SPRITE     4
-#define SHOOTER_SPRITE  5
-
-
 typedef struct
 {
 	C2D_Sprite spr;
