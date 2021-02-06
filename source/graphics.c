@@ -17,16 +17,10 @@ void initAllGraphics()
     // Create screens
 	top_screen = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
 	bottom_screen = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
-
-    general_spriteSheet = C2D_SpriteSheetLoad("romfs:/gfx/sprites.t3x");
-	if (!general_spriteSheet) svcBreak(USERBREAK_PANIC);
 }
 
 void destroyAllGraphics()
 {
-    // Delete graphics
-	C2D_SpriteSheetFree(general_spriteSheet);
-
 	// Deinit libs
 	C2D_Fini();
 	C3D_Fini();

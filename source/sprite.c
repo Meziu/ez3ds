@@ -1,10 +1,9 @@
 #include "little3ds/sprite.h"
 
-C2D_SpriteSheet general_spriteSheet;
 Sprite sprites[MAX_SPRITES];
 size_t numSprites = 0;
 
-Sprite* newSprite(bool pscreen, int usedFrame, Vector2D pos, int angle)
+Sprite* newSprite(bool pscreen, C2D_SpriteSheet* p_sheet, int usedFrame, Vector2D pos, int angle)
 {
     for (int i = 0; i < MAX_SPRITES; i++)
 	{
@@ -14,9 +13,11 @@ Sprite* newSprite(bool pscreen, int usedFrame, Vector2D pos, int angle)
 
             nSprite->used = true;
             nSprite->screen = pscreen;
+            nSprite->sprite_sheet = p_sheet;
+            nSprite->cur_frame = (uint16_t)usedFrame;
 
             // Random image, position, rotation and speed
-            C2D_SpriteFromSheet(&nSprite->spr, general_spriteSheet, usedFrame);
+            C2D_SpriteFromSheet(&nSprite->spr, *nSprite->sprite_sheet, (int)nSprite->cur_frame);
             C2D_SpriteSetCenter(&nSprite->spr, 0.5f, 0.5f);
             C2D_SpriteSetPos(&nSprite->spr, (int)pos.x, (int)pos.y);
             
