@@ -4,3 +4,4 @@
 #include "little3ds/collision.h"
 #include "little3ds/graphics.h"
 #include "little3ds/stolenAudio.h"
+#include "little3ds/curlrequest.h"
