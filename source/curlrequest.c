@@ -36,7 +36,7 @@ size_t write_to_string(void *ptr, size_t size, size_t nmemb, struct string *s)
     return size*nmemb;
 }
 
-void initSock()
+void initCurlR()
 {
     SOC_buffer = (u32*)memalign(SOC_ALIGN, SOC_BUFFERSIZE);
     socInit(SOC_buffer, SOC_BUFFERSIZE);
@@ -62,7 +62,6 @@ char* curlRequest(const char* url)
     curl_easy_cleanup(curl);
 
 
-    printf("result: %d", result);
     if (result == 0)
     {
         return retrieved_data.ptr;

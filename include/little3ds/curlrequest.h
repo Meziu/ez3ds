@@ -10,5 +10,5 @@
 
 extern u32 *SOC_buffer;
 
-void initSock();
+void initCurlR();
 char* curlRequest(const char* url);
